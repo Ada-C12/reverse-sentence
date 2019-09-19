@@ -1,7 +1,7 @@
 # A method which will return an array of the words in the string
 #  sorted by the length of the word.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2) where n is the length of array
+# Space complexity: O(n) where n is length of string/array
 def sort_by_length(my_sentence)
   # using bubble sort
   sentence_in_array = my_sentence.split(" ")
