@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) where n is the number of characters in the string
+# Space complexity: O(1)
 def reverse_sentence(my_sentence)
   # raise NotImplementedError
   
@@ -15,7 +15,7 @@ def reverse_sentence(my_sentence)
     return ""
   end
   
-  # reverse entire string; O(n)
+  # reverse entire string
   # start first at beginning of array
   first = 0
   # start last at the end of the array
@@ -54,7 +54,7 @@ def reverse_sentence(my_sentence)
   
 end
 
-def reverse_string(string, first, last)
+def reverse_string(string, first, last) # O(n)
   while first < last
     # swap items
     temp = string[first]
