@@ -10,7 +10,8 @@ def sort_by_length(my_sentence)
   length = output.length()
 
   if length > 0
-    (0...length).each do |i|
+    (0...length - 1).each do |i|
+      swapped = false
       (0...length - i - 1).each do |j|
         first = output[j]
         second = output[j + 1]
@@ -18,9 +19,12 @@ def sort_by_length(my_sentence)
         if first.length() > second.length
           output[j + 1] = first
           output[j] = second
+          swapped = true
         end
 
       end
+
+      break if !swapped
     end
   end
   
