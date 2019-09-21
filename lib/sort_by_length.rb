@@ -43,19 +43,3 @@ def bubble_sort(strings)
   end
   return strings
 end
-
-
-# In this method you will take a string as a parameter.  The method will return an array of words in the string, sorted by length.  Solve the problem without using the ruby `.sort` method.  When words are tied for length, maintain the order they appeared in the original string.
-
-
-# it "will return an array of words, by length" do
-#   expect(sort_by_length("I love Ada")).must_equal ["I", "Ada", "love"]
-# end
-
-# it "will return an array of words by length, words that are of equal length will appear in the order they appear" do
-#   expect(sort_by_length("words of equal length")).must_equal ["of", "words", "equal", "length"]
-# end
-
-# it "will return an array of words by length, words that are of equal length will appear in the order they appear" do
-#   expect(sort_by_length("I love great awesome words")).must_equal ["I", "love", "great", "words", "awesome"]
-# end
