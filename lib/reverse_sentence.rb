@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: O(n) for first while loop + O(n) for second while loop = O(n) total
-# Space complexity: O(n) for words array + O(1) to modify my_sentence in place = O(n) total
+# Time complexity: O(n) for first while loop + O(n) for second while loop = O(n) total. N is the length of input string.
+# Space complexity: O(n) for words array + O(1) to modify my_sentence in place = O(n) total. N is the length of input string.
 
 def reverse_sentence(my_sentence)
   if !my_sentence || my_sentence.empty?
