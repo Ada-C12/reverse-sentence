@@ -1,7 +1,7 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: O(n) because I reverse entire string which has O(n) time complexity and 
+# Time complexity: O(n) because I reverse entire string which has O(n) time complexity and then
 # I iterate through string once again to reverse each word, this costs O(n) for iteration + O((1/2)*n) for reversing
-# each word.
+# each word. Total time complexity O(n + n + (1/2)*n)
 # Space complexity: O(1) because I reverse string and its words in place
 
 def reverse_string(string, start_index, end_index)
