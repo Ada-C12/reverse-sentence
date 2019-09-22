@@ -6,7 +6,7 @@ def sort_by_length(my_sentence)
   if my_sentence == ""
     return []
   end
-  # selection sort -- find min, swap with first (second, etc) index item
+  # selection sort
   array = my_sentence.split(" ")
   count = array.length
   outer_loop_index = 0
@@ -20,25 +20,11 @@ def sort_by_length(my_sentence)
       end
       inner_loop_index += 1
     end
+    # If there's a value smaller than existing, swap
     if array[outer_loop_index] != array[min_index]
-      temp = array[outer_loop_index]
-      array[outer_loop_index] = array[min_index]
-      array[min_index] = temp
+      array[outer_loop_index], array[min_index] = array[min_index], array[outer_loop_index]
     end
     outer_loop_index += 1
   end
   return array
-end
-
-def reverse_sentence(sentence)
-  array = sentence.split(" ")
-  length = array.length
-  front_index = 0
-  back_index = length - 1
-
-  (length/2).times do
-    array[front_index], array[back_index] = array[back_index], array[front_index]
-    front_index += 1
-    back_index -= 1
-  end
 end
