@@ -1,22 +1,6 @@
 # A method to reverse the words in a sentence, in place.
 # Time complexity: ?
 # Space complexity: ?
-require 'pry'
-
-def swap_em(sentence)
-  low = 0
-  high = sentence.length - 1
-  
-  while low < high
-    temp = sentence[high]
-    sentence[high] = sentence[low]
-    sentence[low] = temp
-    low = low + 1
-    high = high - 1
-  end
-  return sentence
-end
-
 def reverse_sentence(my_sentence)
   if my_sentence == nil
     return nil
@@ -49,4 +33,19 @@ def reverse_sentence(my_sentence)
       reversed = false
     end
   end 
+end
+
+# Helper method - reverses the string: O(n) time; O(1) space
+def swap_em(sentence)
+  low = 0
+  high = sentence.length - 1
+  
+  while low < high
+    temp = sentence[high]
+    sentence[high] = sentence[low]
+    sentence[low] = temp
+    low = low + 1
+    high = high - 1
+  end
+  return sentence
 end
