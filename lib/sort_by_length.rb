@@ -21,6 +21,3 @@ def sort_by_length(my_sentence)
   end
   return array
 end
-
-p sort_by_length("I love Ada")
-
