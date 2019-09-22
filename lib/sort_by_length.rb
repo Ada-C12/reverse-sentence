@@ -19,7 +19,7 @@ def sort_by_length(my_sentence)
   # Instead of .split -- makes an array
   while word_end <= sentence_length
     if my_sentence[word_end] != " " && my_sentence[word_end] != nil
-      array_word = array_word + "#{my_sentence[word_end]}"
+      array_word = array_word + my_sentence[word_end]
       word_end += 1
     elsif  array_word != ""
       array[array_index] = array_word
@@ -33,7 +33,6 @@ def sort_by_length(my_sentence)
   
   # Arrange array using bubble sort w/optimization for already sorted arrays
   length = array.length
-  
   i = 0
   swapped = true
   
@@ -52,5 +51,4 @@ def sort_by_length(my_sentence)
     i += 1
   end
   return array
-  
 end
