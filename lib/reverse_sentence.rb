@@ -2,5 +2,8 @@
 # Time complexity: ?
 # Space complexity: ?
 def reverse_sentence(my_sentence)
-  raise NotImplementedError
+  if my_sentence == ""
+    return nil
+  end
+  
 end
