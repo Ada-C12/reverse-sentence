@@ -1,25 +1,6 @@
-require "pry"
-
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
-# def reverse_sentence(my_sentence)
-#   if my_sentence.nil?
-#     return ""
-#   else
-#     split_sentence = my_sentence.split(" ")
-#     reversed_sentence = Array.new(split_sentence.count)
-
-#     split_sentence.each_with_index do |str, index|
-#       reversed_sentence[-(index + 1)] = str
-#     end
-#   end
-#   p reversed_sentence
-#   # if reversed_sentence.include? "engineer"
-#   #   binding.pry
-#   # end
-#   reversed_sentence.join(" ")
-# end
+# Time complexity: O(n) n is the length of my_sentence which its characters are iterated over. The number of loops will increase proportionally
+# Space complexity: O(1) we only return one string that is reversed in place
 
 def reverse_sentence(my_sentence)
   if my_sentence.nil?
@@ -46,6 +27,7 @@ def reverse_sentence(my_sentence)
   end
 end
 
+# Helper method for reverse_sentence method
 def reverse_string(str, start_idx = nil, end_idx = nil)
   if start_idx.nil? || end_idx.nil?
     start_idx = 0
@@ -57,17 +39,5 @@ def reverse_string(str, start_idx = nil, end_idx = nil)
     start_idx += 1
     end_idx -= 1
   end
+  return str
 end
-
-# Don't create a new array. Only reverse the string in place!!
-
-# word = "hello, world"
-
-# new = word.split(" ")
-# reversed_string = Array.new(new.count)
-
-# new.each_with_index do |str, index|
-#   reversed_string[-(index + 1)] = str
-# end
-
-# reversed_string.join(" ")

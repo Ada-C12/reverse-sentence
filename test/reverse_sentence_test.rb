@@ -71,4 +71,12 @@ describe "reverse sentence" do
       test_string.must_equal "     this! do can I  "
     end
   end
+
+  describe "reverse_string method (helper method)" do
+    it "will reverse a string and its characters backwards" do
+      string = "jelly beans"
+
+      expect(reverse_string(string)).must_equal "snaeb yllej"
+    end
+  end
 end
