@@ -3,8 +3,6 @@
 # Time complexity: This is an insertion sort with two loops, so time complexity is O(n^2) / quadratic
 # Space complexity: O(1) / constant
 
-require "pry"
-
 "I", "love", "great", "awesome", "words"
 def sort_by_length(my_sentence)
   # split sentence into array of strings
@@ -14,7 +12,7 @@ def sort_by_length(my_sentence)
   # set condition for outer loop to run
   while i < array_length
     # declare value for word to be considered 
-    to_insert = my_sentence_words[i] # to_insert = "words"
+    to_insert = my_sentence_words[i] 
     j = i # j = 4
     # set conditions for inner loop to run
     while j > 0 && my_sentence_words[j-1].length > to_insert.length 
@@ -23,8 +21,8 @@ def sort_by_length(my_sentence)
       # decrement counter for inner loop
       j -= 1 
     end
-    # declare value 
-    my_sentence_words[j] = to_insert # "words"
+    # not 100 percent sure what this variable is doing but I know it's necessary
+    my_sentence_words[j] = to_insert 
     # increment counter for outer loop
     i += 1 
   end
