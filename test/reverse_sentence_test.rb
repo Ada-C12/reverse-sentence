@@ -22,7 +22,7 @@ describe "reverse sentence" do
   # check for edge cases
   describe "edge cases" do
     # if it's a string parameter, check for empty
-    xit "reverse an empty sentence" do
+    it "reverse an empty sentence" do
       test_string = ""
 
       reverse_sentence(test_string)
@@ -31,7 +31,7 @@ describe "reverse sentence" do
     end
 
     # if the parameter is an object, check for nil
-    xit "nil object passed to sentence reverse" do
+    it "nil object passed to sentence reverse" do
       test_string = nil
 
       reverse_sentence(test_string)
@@ -39,7 +39,7 @@ describe "reverse sentence" do
       test_string.must_be_nil
     end
 
-    xit "reverse a sentence with one word" do
+    it "reverse a sentence with one word" do
       test_string = "world"
 
       reverse_sentence(test_string)
@@ -47,7 +47,7 @@ describe "reverse sentence" do
       test_string.must_equal "world"
     end
 
-    xit "reverse a sentence with multiple words" do
+    it "reverse a sentence with multiple words" do
       test_string = "I'm a better engineer today than I was yesterday."
 
       reverse_sentence(test_string)
@@ -55,7 +55,7 @@ describe "reverse sentence" do
       test_string.must_equal "yesterday. was I than today engineer better a I'm"
     end
 
-    xit "reverse a sentence with multiple spaces between words" do
+    it "reverse a sentence with multiple spaces between words" do
       test_string = "How  do  you   like     them      apples?"
 
       reverse_sentence(test_string)
@@ -63,7 +63,7 @@ describe "reverse sentence" do
       test_string.must_equal "apples?      them     like   you  do  How"
     end
 
-    xit "reverse a sentence with preceeding and trailing white spaces" do
+    it "reverse a sentence with preceeding and trailing white spaces" do
       test_string = "  I can do this!     "
 
       reverse_sentence(test_string)

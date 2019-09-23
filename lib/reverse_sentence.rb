@@ -3,9 +3,13 @@ require 'pry'
 # Time complexity: ?
 # Space complexity: ?
 def reverse_sentence(my_sentence)
+  if my_sentence == nil
+    return nil
+  end
+
   #Take in string and convert to array of words with spaces perseved
   sentence_array = my_sentence.split(/[\s$]{1}/)
-  # binding.pry
+
   #Iterate through array swapping words
   i = 0
   j = sentence_array.length - 1
@@ -18,8 +22,6 @@ def reverse_sentence(my_sentence)
     j -= 1
   end
   
-  my_sentence = sentence_array.join(' ')
-  binding.pry
-  return my_sentence
+  return my_sentence = sentence_array.join(' ')
   #Concatente elements of array into a string output that will be returned (.join)
 end
