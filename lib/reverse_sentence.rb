@@ -2,28 +2,28 @@
 # Time complexity: ?
 # Space complexity: ?
 def reverse_sentence(my_sentence)
-  if my_sentence.nil?
-    return my_sentence
-  end
+  # length = my_sentence.length
   
+  # i = 0
   
-  i = 0
-  j = (my_sentence.length - 1)
-  punctuation = [',', '.', '!', ':', ';', '?']
-  
-  # reverses each character
-  until i == my_sentence.length
-    holding = my_sentence[j]
-    my_sentence[i] = holding
-    i += 1
-    j -= 1
-  end
-  
-  # swap each character of each word back into space
-  my_sentence 
-  until 
-  end
-  
-  return my_sentence
+  # #   # If the inner loop runs with no swaps, exit
+  # swapped = true
+  # while i < length-1 && swapped # outer loop
+  #   j = 0
+  #   Assume you won't have to make a swap
+  #   #     swapped = false
+  #   #     while j < length-i-1 # inner loop
+  #   #       if array[j] > array[j+1] # swap
+  #   #         temp = array[j]
+  #   #         array[j] = array[j+1]
+  #   #         array[j+1] = temp
+  #   #         # Since we just made a swap, set swapped to true
+  #   #         swapped = true
+  #   #       end
+  #       j += 1
+  #     end
+  #     i += 1
+  #   end
+  # end
   raise NotImplementedError
 end

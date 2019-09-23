@@ -27,7 +27,7 @@ describe "reverse sentence" do
     # if the parameter is an object, check for nil
     it "nil object passed to sentence reverse" do
       test_string = nil
-      
+    
       reverse_sentence(test_string)
       
       test_string.must_be_nil
