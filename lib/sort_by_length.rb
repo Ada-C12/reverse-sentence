@@ -1,6 +1,6 @@
 # A method which will return an array of the words in the string
 #  sorted by the length of the word.
-# Time complexity: O(n2) because I use bubble sort for sorting words by their length
+# Time complexity: O(n^2) because I use bubble sort for sorting words by their length
 # Space complexity: O(n) because I create array output which contains n number of words in input string
 def sort_by_length(my_sentence)
   raise ArgumentError if !my_sentence
