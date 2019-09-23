@@ -3,19 +3,15 @@
 # Time complexity: ?
 # Space complexity: ?
 
-def reverse_sentence(my_sentence)
-  my_sentence_words = my_sentence.split(/\s/)
-  i = 0
-  j = i - 1
+def reverse_sentence(test_string)
+  half = test_string.length / 2
   # loop through elements n/2 times (ignores central element if length is odd)
-  while i < (my_sentence_words.length) / 2
-    # swap the elements at i and j
-    my_sentence_words[i], my_sentence_words[j] = my_sentence_words[j], my_sentence_words[i]
-    # increment i
-    i += 1
-    # decrement j
-    j -= 1
+  half.times do |i|
+    # swap all characters/whitespace ("  Yoda" => "adoY  ")
+    test_string[i], test_string[-i-1] = test_string[-i-1], test_string[i]
   end
-  reversed_sentence = my_sentence_words.join(" ")
-  return reversed_sentence
+  
+  # can't figure out how to reverse letters in each word :(
+  
+  return test_string
 end
