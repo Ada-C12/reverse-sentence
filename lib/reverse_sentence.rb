@@ -17,28 +17,17 @@ def reverse_sentence(my_sentence)
   front_index = 0
   back_index = 1
 
-  while back_index < length
-    # bypass blank spaces and single-letter words
-    if my_sentence[front_index] == " " || my_sentence[front_index] != " " && my_sentence[back_index] == " " && back_index - front_index == 1
-      front_index += 1
-      back_index += 1
-
-      # for end of sentence or word
-    elsif my_sentence[front_index] != " " && my_sentence[back_index] != " " && (my_sentence[back_index + 1] == nil || my_sentence[back_index + 1] == " ")
+  while back_index <= length
+    if my_sentence[back_index] != nil && my_sentence[back_index] == " "
       switcheroo(my_sentence, front_index, back_index)
       front_index = back_index
-      back_index = front_index + 1
-
-      # if front is char, move back index to end of word
-    elsif my_sentence[front_index]!= " " && my_sentence[back_index + 1] != " "
-      back_index += 1
     end
+    back_index += 1
   end
-  return my_sentence
 end
 
 def switcheroo(string, front_index, back_index)
-  length = string.length
+  length = back_index - front_index + 1
   num_swap = length / 2
   num_swap.times do
     string[front_index], string[back_index] = string[back_index], string[front_index]
