@@ -16,8 +16,7 @@ def reverse_sentence(my_sentence)
       last -= 1
     end
   end
-  my_sentence = my_sentence.join(" ")
-  return my_sentence
+  return my_sentence.join(" ")
 end
 
 
