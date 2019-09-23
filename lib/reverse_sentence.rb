@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) The (very ugly and repetitive code in this) program has to run through n twice--the first time to reverse all of the characters, and the second time to re-reverse (correct) each individual word. The constant '2' drops away.
+# Space complexity: O(1)? Because the string is modifying in place, it doesn't take up additional space. 
 def reverse_sentence(my_sentence)
   if my_sentence == ""
     return ""
@@ -17,7 +17,6 @@ def reverse_sentence(my_sentence)
     front_index += 1
     back_index -= 1
   end
-  p my_sentence
   head_index = 0
   tail_index = 1
   while tail_index < length
