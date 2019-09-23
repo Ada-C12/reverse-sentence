@@ -30,6 +30,7 @@ def sort_by_length(my_sentence)
     end
     i += 1
   end
+  
   return array
   raise NotImplementedError, "Method not implemented"
 end
