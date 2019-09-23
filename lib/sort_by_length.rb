@@ -3,7 +3,6 @@
 # Time complexity: This is an insertion sort with two loops, so time complexity is O(n^2) / quadratic
 # Space complexity: O(1) / constant
 
-"I", "love", "great", "awesome", "words"
 def sort_by_length(my_sentence)
   # split sentence into array of strings
   my_sentence_words = my_sentence.split(" ") 
