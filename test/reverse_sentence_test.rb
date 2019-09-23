@@ -35,34 +35,27 @@ describe "reverse sentence" do
     
     it "reverse a sentence with one word" do
       test_string = "world"
-      
       reverse_sentence(test_string)
-      
       test_string.must_equal "world"
     end
     
     it "reverse a sentence with multiple words" do
       test_string = "I'm a better engineer today than I was yesterday."
-      
       reverse_sentence(test_string)
-      
       test_string.must_equal "yesterday. was I than today engineer better a I'm"
     end
     
     it "reverse a sentence with multiple spaces between words" do
       test_string = "How  do  you   like     them      apples?"
-      
-      reverse_sentence(test_string)
-      
-      test_string.must_equal "apples?      them     like   you  do  How"
-    end
-    
-    it "reverse a sentence with preceeding and trailing white spaces" do
-      test_string = "  I can do this!     "
-      
-      reverse_sentence(test_string)
-      
-      test_string.must_equal "     this! do can I  "
-    end
-  end
-end
+        reverse_sentence(test_string)
+        test_string.must_equal "apples?      them     like   you  do  How"
+        end
+        
+        it "reverse a sentence with preceeding and trailing white spaces" do
+          test_string = "  I can do this!     "
+            reverse_sentence(test_string)
+            test_string.must_equal "     this! do can I  "
+            end
+          end
+        end
+        
