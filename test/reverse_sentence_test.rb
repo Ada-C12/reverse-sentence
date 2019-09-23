@@ -2,7 +2,7 @@ require_relative "test_helper"
 
 describe "reverse sentence" do
   describe "basic tests" do
-    xit "reverse a sentence with two words" do
+    it "reverse a sentence with two words" do
       test_string = "hello, world"
 
       reverse_sentence(test_string)
@@ -10,7 +10,7 @@ describe "reverse sentence" do
       test_string.must_equal "world hello,"
     end
 
-    xit "reverse a sentence with three words" do
+    it "reverse a sentence with three words" do
       test_string = "Yoda is awesome!"
 
       reverse_sentence(test_string)
