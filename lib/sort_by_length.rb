@@ -2,6 +2,8 @@
 #  sorted by the length of the word.
 # Time complexity: O(n^2)
 # Space complexity: O(n)
+# Source Citation: https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/04-cs-fundamentals/classroom/Sorting.md, Insertion Sort example implementation
+# Adjusted source citation example for modified problem
 def sort_by_length(my_sentence)
   word_array = my_sentence.split(" ")
   i = 1
