@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
 # Time complexity: O(n) n is the length of my_sentence which its characters are iterated over. The number of loops will increase proportionally
-# Space complexity: O(1) we only return one string that is reversed in place
+# Space complexity: O(1) only return one string that is reversed in place
 
 def reverse_sentence(my_sentence)
   if my_sentence.nil?
