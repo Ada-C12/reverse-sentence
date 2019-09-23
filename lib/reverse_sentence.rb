@@ -15,24 +15,24 @@ def reverse_sentence(my_sentence)
 
   # now go back and switch back individual words
   front_index = 0
-  back_index = 1
+  back_index = 0
 
   while back_index <= length
-    if my_sentence[back_index] != nil && my_sentence[back_index] == " "
-      switcheroo(my_sentence, front_index, back_index)
-      front_index = back_index
+    if back_index == length || my_sentence[back_index] == " "
+      switcheroo(my_sentence, front_index, back_index-1)
+      front_index = back_index + 1
     end
     back_index += 1
   end
 end
 
-def switcheroo(string, front_index, back_index)
-  length = back_index - front_index + 1
-  num_swap = length / 2
-  num_swap.times do
-    string[front_index], string[back_index] = string[back_index], string[front_index]
-    front_index += 1
-    back_index -= 1
+  def switcheroo(string, front_index, back_index)
+    length = back_index - front_index + 1
+    num_swap = length / 2
+    num_swap.times do
+      string[front_index], string[back_index] = string[back_index], string[front_index]
+      front_index += 1
+      back_index -= 1
+    end
+    return string
   end
-  return string
-end
