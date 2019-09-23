@@ -10,12 +10,14 @@ def reverse_sentence(my_sentence)
   end
 
   # first reverse all characters
-  switcheroo(my_sentence)
+  length = my_sentence.length
+  switcheroo(my_sentence, 0, length-1)
+
   # now go back and switch back individual words
   front_index = 0
   back_index = 1
-  length = my_sentence.length
-  while back_index <= length
+
+  while back_index < length
     # bypass blank spaces and single-letter words
     if my_sentence[front_index] == " " || my_sentence[front_index] != " " && my_sentence[back_index] == " " && back_index - front_index == 1
       front_index += 1
@@ -23,22 +25,20 @@ def reverse_sentence(my_sentence)
 
       # for end of sentence or word
     elsif my_sentence[front_index] != " " && my_sentence[back_index] != " " && (my_sentence[back_index + 1] == nil || my_sentence[back_index + 1] == " ")
-      my_sentence.sub!(my_sentence[front_index..back_index],switcheroo(my_sentence[front_index..back_index]))
+      switcheroo(my_sentence, front_index, back_index)
       front_index = back_index
       back_index = front_index + 1
-      
+
       # if front is char, move back index to end of word
-    elsif my_sentence[front_index]!= " " && my_sentence[back_index] != " "
+    elsif my_sentence[front_index]!= " " && my_sentence[back_index + 1] != " "
       back_index += 1
     end
   end
   return my_sentence
 end
 
-def switcheroo(string)
+def switcheroo(string, front_index, back_index)
   length = string.length
-  front_index = 0
-  back_index = length - 1
   num_swap = length / 2
   num_swap.times do
     string[front_index], string[back_index] = string[back_index], string[front_index]
