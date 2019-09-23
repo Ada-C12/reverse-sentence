@@ -9,30 +9,22 @@ def reverse_sentence(my_sentence)
     return nil
   end
   
-  array = my_sentence.split(' ')
-  length = array.length
-  i = 0
-  # If the inner loop runs with no swaps, exit
-  swapped = true
-  while i < length-1 && swapped # outer loop
-    j = 0
-    # Assume you won't have to make a swap
-    swapped = false
-    while j < length-i-1 # inner loop
-      if array[j] > array[j+1] # swap
-        temp = array[j]
-        array[j] = array[j+1]
-        array[j+1] = temp
-        # Since we just made a swap, set swapped to true
-        swapped = true
-      end
-      j += 1
-    end
-    i += 1
+  my_sentence = my_sentence.split(' ')
+  length = my_sentence.length
+  second_array = []
+  
+  length.times do  |i|
+    second_array[i] = my_sentence[length-1 - i]
   end
   
+  length.times do |i|
+    my_sentence[i] = second_array[i]
+  end
   
-  return array
+  # my_sentence = array.join(" ")
+  my_sentence = my_sentence.join(" ")
+  return my_sentence
   
-  raise NotImplementedError
+  raise NotImplementedError, "Method not implemented"
 end
+
