@@ -1,9 +1,9 @@
 # A method to reverse the words in a sentence, in place.
 
-# Time complexity: O(n^2) - depends on the length of my_sentence string
+# Time complexity: O(n^2) - depends on the length of rev_sentence string
 # Space complexity: O(1) - doens't create or add any data just rearrenges the string
 
-require "pry"
+# require "pry"
 def reverse_sentence(my_sentence)
   if my_sentence == nil
     return nil
