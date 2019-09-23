@@ -1,5 +1,5 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: O(n^2), linear, because there are three while loops within reverse_sentence() and reverse(), and two that are nested. The amount of iterations may increase proportionately to the data being passed through.
+# Time complexity: O(n^3), cubic, because there are three while loops within reverse_sentence() and reverse() that are nested. The amount of iterations may increase proportionately to the data being passed through.
 # Space complexity: O(1), constant, because the only data that is being stored is the start/ending/temp variables, and the array being passed through is being reversed in place.
 def reverse_sentence(my_sentence)
   return [] if my_sentence.nil? || my_sentence.length == 0
