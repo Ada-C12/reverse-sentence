@@ -6,19 +6,25 @@ def reverse_sentence(my_sentence)
   if my_sentence.nil?
     return nil
   else
-    my_sentence = my_sentence.split(/\s/)
+    word_array = my_sentence.split(/\s/)
     i = 0
     last = -1
-    (my_sentence.length/2).times do |i|
-      temp = my_sentence[i]
-      my_sentence[i] = my_sentence[last]
-      my_sentence[last] = temp
+    (word_array.length/2).times do |i|
+      temp = word_array[i]
+      word_array[i] = word_array[last]
+      word_array[last] = temp
       last -= 1
     end
   end
-  return my_sentence.join(" ")
+  new_string = word_array.join(" ")
+
+  my_sentence.length.times do |i|
+    my_sentence[i] = new_string[i]
+  end
+  return my_sentence
 end
 
 
-# my_sentence = "How  do  you   like     them      apples?"
-# p reverse_sentence(my_sentence)
+my_sentence = "How  do  you   like     them      apples?"
+reverse_sentence(my_sentence)
+p my_sentence
