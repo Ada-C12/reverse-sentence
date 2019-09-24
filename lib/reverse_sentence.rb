@@ -23,36 +23,35 @@ def reverse_sentence(my_sentence)
     word_in_order_array.push(temp)
   end
   
-  # word_in_order_array has each word flipped back in place, now to replace the characters of my_sentence
   x = 0
-  z = 0
-  my_sentence.each_char do |char|
-    if char == word_in_order_array[x][z]
-      my_sentence.insert(x, word_in_order_array[x])
-      x += 1 
-    else
+  word_in_order_array.each do |word|
+    
+    word.each_char do |char|
+      until my_sentence[x] != " "
+        x += 1
+      end
+      my_sentence[x] = char
+      x += 1
       
     end
-    # my_sentence is what i need to work with
-    # third_array.each do |word|
-    #   length = word.length
-    #   first_char = word[0]
-    #   last_char = word[length-1]
-    #   raise NotImplementedError
-    # end
-    
-    
-    def reversaroo(string, length)
-      j = (length - 1)
-      i = 0
-      while i < j
-        temp = string[i]
-        string[i] = string[j] 
-        string[j] = temp
-        j -= 1
-        i += 1
-      end
-      return string
-    end
-    
-    reverse_sentence("hi natalie")
+  end
+  # search for any character or whitespace followed immediately by a character
+  return my_sentence
+end
+
+
+
+
+def reversaroo(string, length)
+  j = (length - 1)
+  i = 0
+  while i < j
+    temp = string[i]
+    string[i] = string[j] 
+    string[j] = temp
+    j -= 1
+    i += 1
+  end
+  return string
+end
+
