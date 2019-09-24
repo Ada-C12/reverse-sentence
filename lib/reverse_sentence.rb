@@ -19,8 +19,10 @@ def reverse_sentence(my_sentence)
 
   # find all starts of reversed words and the words
   regex = /([^ ]+)/
-  # gets positions of starts of each reversed word
   reversed_words = my_sentence.scan(regex).flatten
+  # positions of regex matches with enum_for code originally from "Sean Hill"'s answer at
+  # https://stackoverflow.com/questions/5241653/ruby-regex-match-and-get-positions-of
+  # gets positions of starts of each matched reversed word
   reversed_word_start_indices = my_sentence.enum_for(:scan, regex).map { Regexp.last_match.begin(0) }
 
   # for each start of word:
