@@ -1,5 +1,7 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: O(a * b) where a is the number of words in the sentence and b is the number of characeters
+# Time complexity: O(n) where n is the number of characters in the sentence. This is because it is essentially multiplying
+# the number of characters in each word by 1 --> for each word, reverse each character in that word. So, it ends up being (1 * number of characters in word 1) + (1 * number of characters in word 2) etc. for each word,
+# which simplifies to adding together the number of characters in each word, which is essentailly O(n)
 # Space complexity: O(1)
 def reverse_sentence(my_sentence)
   if my_sentence == nil
