@@ -22,9 +22,6 @@ def reverse_sentence(my_sentence)
   # gets positions of starts of each reversed word
   reversed_words = my_sentence.scan(regex).flatten
   reversed_word_start_indices = my_sentence.enum_for(:scan, regex).map { Regexp.last_match.begin(0) }
-  if reversed_word_start_indices == nil
-    return my_sentence
-  end
 
   # for each start of word:
   reversed_word_start_indices.each_with_index do |word_start_index, match_index|
