@@ -1,6 +1,8 @@
 # A method to reverse the words in a sentence, in place.
-# Time compleixity: ?
-# Space compleixity: ?
+# Time complexity: The time complexity of this method is O(nm) where n is the length of my_sentence and m is the length of a word in my_sentence. The first while loop has a time complexity of O(1/2n) where n is the length of my_sentence. The second while loop has a time complexity of O(n)where n is the length of my_sentence and a nested while loop with a time complexity of (1/2m) where m is the length of the word within the sentence. So the total time complexity is O(3/2n * 1/2m) or O(nm).
+
+# Space complexity: The space complexity of this method is O(1) because the space that the variables take up stays constant regardless of the lengthe of the string.
+
 def reverse_sentence(my_sentence)
   
   return nil if my_sentence == nil
