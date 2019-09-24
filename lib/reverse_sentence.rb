@@ -6,7 +6,7 @@ def reverse_sentence(my_sentence)
   if my_sentence.nil?
     return nil
   else
-    word_array = my_sentence.split(/\s/)
+    word_array = my_sentence.split(/\s/) # regex not working for test #6
     i = 0
     last = -1
     (word_array.length/2).times do |i|
@@ -25,6 +25,6 @@ def reverse_sentence(my_sentence)
 end
 
 
-my_sentence = "How  do  you   like     them      apples?"
-reverse_sentence(my_sentence)
-p my_sentence
+# my_sentence = "How  do  you   like     them      apples?"
+# reverse_sentence(my_sentence)
+# p my_sentence
