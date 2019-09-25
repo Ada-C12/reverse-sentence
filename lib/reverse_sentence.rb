@@ -9,7 +9,7 @@ def reverse_sentence(my_sentence)
   elsif my_sentence == nil
     return nil
   end
-  
+  # regex credit goes to Amal
   reverse = my_sentence.scan(/(\s*)(\w*'*\w+[!,.?]*)(\s*)/).flatten
   i = 0
   j = reverse.length - 1
