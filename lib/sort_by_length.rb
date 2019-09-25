@@ -3,5 +3,22 @@
 # Time complexity: ?
 # Space complexity: ?
 def sort_by_length(my_sentence)
-  raise NotImplementedError, "Method not implemented"
-end
+  words = my_sentence.split(" ")
+  results = []
+  words.each do |word|
+    if results.length > 0
+      results.each_with_index do |result, index|
+        if word.length < result.length
+          results.insert(index, word)
+          break
+        elsif index == (results.length - 1)
+          results << word
+          break
+        end
+      end
+    else
+      results << word
+    end
+  end 
+  return results
+end 
