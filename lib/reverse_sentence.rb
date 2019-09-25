@@ -25,21 +25,18 @@ def reverse_sentence(my_sentence)
   
   x = 0
   word_in_order_array.each do |word|
-    
     word.each_char do |char|
       until my_sentence[x] != " "
         x += 1
       end
       my_sentence[x] = char
       x += 1
-      
     end
   end
   # search for any character or whitespace followed immediately by a character
   return my_sentence
+  raise NotImplementedError
 end
-
-
 
 
 def reversaroo(string, length)
