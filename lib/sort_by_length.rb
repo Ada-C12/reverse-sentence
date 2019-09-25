@@ -1,7 +1,7 @@
 # A method which will return an array of the words in the string
 #  sorted by the length of the word.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n ^ 2)
+# Space complexity: ? O(n) because of splitting the string at the beginning of the method
 
 def swap(arr, index_one, index_two)
   tmp = arr[index_two]
