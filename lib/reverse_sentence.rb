@@ -1,20 +1,12 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n ^2) because lines 47-55 contain a nested loop.
+# Space complexity: ? O(n) because of the empty_index_positions array from lines 33 - 38
 
 def swap_chars(arr, index_one, index_two)
   tmp = arr[index_two]
   arr[index_two] = arr[index_one]
   arr[index_one] = tmp
 end
-
-# def find_empty_space(array)
-#   i = 0 
-#   until array[i] == " "
-#     i += 1
-#   end
-#   return i 
-# end 
 
 def reverse_sub_str(array, start_position, end_position)
   ((end_position - start_position + 1) / 2).times do
@@ -37,8 +29,6 @@ def reverse_sentence(my_sentence)
   i = 0
   j = (my_sentence.length) -1 
   reverse_sub_str(my_sentence, i, j)
-  # p my_sentence
-  
   
   empty_index_positions = []
   my_sentence.length.times do |i|
@@ -46,7 +36,6 @@ def reverse_sentence(my_sentence)
       empty_index_positions << i 
     end 
   end
-  # p empty_index_positions
   
   if empty_index_positions.length == 0 
     i = 0
