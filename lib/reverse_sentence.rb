@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^3)
+# Space complexity: O(n) I believe since there is a second array created in memory to store/reverse each word 
 require 'pry'
 
 def reverse_sentence(my_sentence)
@@ -14,7 +14,7 @@ def reverse_sentence(my_sentence)
   reversaroo(my_sentence, length)
   # first fully reverse the strings
   
-  # then know which spots are words and reverse those in place
+  # take each 'word' and split into an array. then reversaroo the each word and store in an array called word_in_order_array
   split_sentence = my_sentence.split(' ')
   word_in_order_array = []
   split_sentence.each_with_index do |word, i|
