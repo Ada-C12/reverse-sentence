@@ -3,6 +3,8 @@
 # Time complexity: n^2
 # Space complexity: O(1=n)
 def sort_by_length(my_sentence)
+  return nil if my_sentence.nil?
+  
   my_sorted_array = []
   my_array = my_sentence.split
   
