@@ -62,7 +62,7 @@ def reverse_sentence(my_sentence)
   end
 end
 
-# Helper methoder to determin pairs of character that needs to be swapped
+# Helper method to determin pairs of character that needs to be swapped
 def pairs_helper(length)
   if length % 2 == 0
     pairs = length / 2
@@ -71,6 +71,3 @@ def pairs_helper(length)
   end
   return pairs
 end
-
-# test_string = "Yoda is awesome!"
-# test_result = reverse_sentence(test_string)
