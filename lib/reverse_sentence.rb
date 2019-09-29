@@ -4,7 +4,7 @@
 #   - 1st while loop: O(.5n) where n is the number of letters
 #   - 2nd while loop: O(n) where n is the number of letters
 # Reverse
-#   - O(m): where m is the number o words
+#   - O(m): where m is the number of words
 # Space complexity: O(1)
 
 def reverse(text, text_start, text_end)
@@ -15,21 +15,20 @@ def reverse(text, text_start, text_end)
     text[text_end - i - 1] = temp_char
     i += 1
   end
-  return text
 end
 
 
 def reverse_sentence(my_sentence)
   return nil if my_sentence.nil?
-  i = 0
+  letter = 0
   length = my_sentence.length
   
   end_char = length - 1
-  while i < my_sentence.length/2 do
-    temp = my_sentence[i]
-    my_sentence[i] = my_sentence[length - 1 - i]
-    my_sentence[length - 1 - i] = temp
-    i += 1
+  while letter < my_sentence.length/2 do
+    temp_char = my_sentence[letter]
+    my_sentence[letter] = my_sentence[length - 1 - letter]
+    my_sentence[length - 1 - letter] = temp_char
+    letter += 1
   end
   
   letter = 0
@@ -49,5 +48,3 @@ def reverse_sentence(my_sentence)
   
   return my_sentence
 end
-
-p reverse_sentence("Yoda is awesome!")
