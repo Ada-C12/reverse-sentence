@@ -1,7 +1,6 @@
-
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(2n) The array is reviewed twice, once for spaces to populate the space array, and once more piecewise to do all the swaps
+# Space complexity: O(1)
 
 require'pry'
 
