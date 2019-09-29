@@ -31,35 +31,22 @@ def reverse_sentence(my_sentence)
   # determines the last index number that will be handled
   last_index = my_sentence.length - 1 
   
-  puts "I am sentence before swaps:#{my_sentence}"
-  
   # determination of which methods are needed
   if !space_array.include? (0)
-    puts "I am running first"
     first(space_array[0], my_sentence)
-    puts "I am sentence after first:#{my_sentence}"
   end
   
   if !space_array.include? (last_index)
-    puts "I am running last"
     last(space_array[-1], last_index, my_sentence)
-    puts "I am sentence after last:#{my_sentence}"
   end
   
-  if space_array.length > 1   
-    puts "I am running middle"
-    
-    
+  if space_array.length > 1 # this is run if there's more than 2 words, hence if there's more than 1 space
     i = 0
-    
     p = space_array.length - 1
     
-    puts "I am space_array #{space_array}"
-    if i + 1 == p
-      puts "I am ln 59"
+    if i + 1 == p # short-circuit for 1-letter words
       first_character = space_array[0] + 1
       second_character = space_array[1] - 1
-      
       my_sentence[first_character], my_sentence[second_character] = my_sentence[second_character], my_sentence[first_character]
     else
       until i + 1 == p
@@ -67,9 +54,7 @@ def reverse_sentence(my_sentence)
         i += 1
       end  
     end
-    
   end
-  
   return my_sentence
   
 end
@@ -129,8 +114,6 @@ def middle(first_space_index_number, last_space_index_number, my_sentence)
   
   if (last_space_index_number - first_space_index_number).even?
     until j == half_limit
-      # puts my_sentence[first_index_to_swap]
-      # puts my_sentence[last_index]
       my_sentence[first_index_to_swap + j], my_sentence[last_index - j] = my_sentence[last_index - j], my_sentence[first_index_to_swap + j]
       j += 1
     end
