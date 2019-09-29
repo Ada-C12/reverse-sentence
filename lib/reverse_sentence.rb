@@ -48,11 +48,19 @@ def reverse_sentence(my_sentence)
   
   if space_array.length > 1   
     puts "I am running middle"
+    
+    
     i = 0
+    
     p = space_array.length - 1
     
+    puts "I am space_array #{space_array}"
     if i + 1 == p
-      my_sentence[i], my_sentence[i+1] = my_sentence[i+1], my_sentence[i]
+      puts "I am ln 59"
+      first_character = space_array[0] + 1
+      second_character = space_array[1] - 1
+      
+      my_sentence[first_character], my_sentence[second_character] = my_sentence[second_character], my_sentence[first_character]
     else
       until i + 1 == p
         middle(space_array[i], space_array[i+1], my_sentence)
@@ -106,12 +114,11 @@ end
 
 def middle(first_space_index_number, last_space_index_number, my_sentence)
   # short-circuit for one-letter words
-  
   if last_space_index_number - first_space_index_number == 1
     return
-    # elsif last_space_index_number - first_space_index_number == 3
-    #   my_sentence[first_space_index_number + 1], my_sentence[last_space_index_number - 1] = my_sentence[last_space_index_number - 1], my_sentence[first_space_index_number + 1]
-    #   return
+  elsif last_space_index_number - first_space_index_number == 3
+    my_sentence[first_space_index_number + 1], my_sentence[last_space_index_number - 1] = my_sentence[last_space_index_number - 1], my_sentence[first_space_index_number + 1]
+    return
   end
   
   first_index_to_swap = first_space_index_number + 1
@@ -122,8 +129,8 @@ def middle(first_space_index_number, last_space_index_number, my_sentence)
   
   if (last_space_index_number - first_space_index_number).even?
     until j == half_limit
-      puts my_sentence[first_index_to_swap]
-      puts my_sentence[last_index]
+      # puts my_sentence[first_index_to_swap]
+      # puts my_sentence[last_index]
       my_sentence[first_index_to_swap + j], my_sentence[last_index - j] = my_sentence[last_index - j], my_sentence[first_index_to_swap + j]
       j += 1
     end
