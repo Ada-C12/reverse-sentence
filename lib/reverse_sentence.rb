@@ -1,16 +1,21 @@
 # A method to reverse the words in a sentence, in place.
 # Time complexity: ?
 # Space complexity: ?
-require 'pry'
 
-
-def reverse_sentence(my_sentence)
-  reverse_array = []
-  words = my_sentence.split(" ")
-  words.length.times do |index|    
-    last_index = words.length - 1 - index
-    reverse_array << words[last_index]
+# reverse string given start and ending index
+def reverse(string, start, ending)
+  
+  i = start
+  j = ending
+  
+  while i < j
+    temp = string[i]
+    string[i] = string[j]
+    string[j] = string[i]
+    
+    i += 1
+    j -= 1
   end
-  # binding.pry
-  return reverse_array.join(" ")
 end
+
+
