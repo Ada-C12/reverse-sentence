@@ -1,5 +1,5 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: O(n) where n is the length of string
+# Time complexity: O(n^2) where n is the length of string
 # Space complexity: O(n) where n is the length of string
 
 def reverse_sentence(my_sentence)
