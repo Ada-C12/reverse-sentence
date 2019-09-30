@@ -6,8 +6,8 @@ describe "reverse sentence" do
       test_string = "hello, world"
 
       reverse_sentence(test_string)
-
-      test_string.must_equal "world hello,"
+      
+      _(test_string).must_equal "world hello,"
     end
 
     it "reverse a sentence with three words" do
@@ -15,7 +15,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      test_string.must_equal "awesome! is Yoda"
+      _(test_string).must_equal "awesome! is Yoda"
     end
   end
 
@@ -27,7 +27,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      test_string.must_be_empty
+      _(test_string).must_be_empty
     end
 
     # if the parameter is an object, check for nil
@@ -36,7 +36,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      test_string.must_be_nil
+      _(test_string).must_be_nil
     end
 
     it "reverse a sentence with one word" do
@@ -44,7 +44,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      test_string.must_equal "world"
+      _(test_string).must_equal "world"
     end
 
     it "reverse a sentence with multiple words" do
@@ -52,7 +52,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      test_string.must_equal "yesterday. was I than today engineer better a I'm"
+      _(test_string).must_equal "yesterday. was I than today engineer better a I'm"
     end
 
     it "reverse a sentence with multiple spaces between words" do
@@ -60,15 +60,15 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      test_string.must_equal "apples?      them     like   you  do  How"
+      _(test_string).must_equal "apples?      them     like   you  do  How"
     end
 
     it "reverse a sentence with preceeding and trailing white spaces" do
       test_string = "  I can do this!     "
-
+      
       reverse_sentence(test_string)
 
-      test_string.must_equal "     this! do can I  "
+      _(test_string).must_equal "     this! do can I  "
     end
   end
 end

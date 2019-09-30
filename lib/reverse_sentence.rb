@@ -6,11 +6,11 @@ def reverse_sentence(my_sentence)
   if my_sentence == nil
     return nil
   end
-
+  
   #Take in string and convert to array of words with spaces perseved
-  sentence_array = my_sentence.split(/[\s$]{1}/)
-
-  #Iterate through array swapping words
+  sentence_array = my_sentence.split(/[\s]/)
+  
+  #Iterate through array swapping each words
   i = 0
   j = sentence_array.length - 1
   while i < j
@@ -22,6 +22,13 @@ def reverse_sentence(my_sentence)
     j -= 1
   end
   
-  return my_sentence = sentence_array.join(' ')
-  #Concatente elements of array into a string output that will be returned (.join)
+  #Concatente elements of array into a new string output using (.join)
+  new_sentence = sentence_array.join(' ')
+
+  #iterate through new string and replace each character into parameter, my_sentence
+  new_sentence.length.times do |i|
+    my_sentence[i] = new_sentence[i]
+  end
+  
+  return my_sentence
 end
