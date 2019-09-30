@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(N)
+# Space complexity: O(N)
 require 'pry'
 # reverse string given start and ending index
 def reverse_word(string, start, ending)
