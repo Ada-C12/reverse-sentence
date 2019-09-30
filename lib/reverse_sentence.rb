@@ -8,7 +8,7 @@ def reverse_sentence(my_sentence)
   end
   
   #Take in string and convert to array of words with spaces perseved
-  sentence_array = my_sentence.split(/[\s]/)
+  sentence_array = my_sentence.split(/\s/)
   
   #Iterate through array swapping each words
   i = 0
