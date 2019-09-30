@@ -1,31 +1,27 @@
 # A method to reverse the words in a sentence, in place.
 # Time complexity: ?
 # Space complexity: ?
-require 'pry'
 def reverse_sentence(my_sentence)
-
-  unless my_sentence == nil
-
-  # array = my_sentence.split(/\.?\s+/)
-  # l = array.length
-  # i = 0
-  # # new_array = []
-
-  # l.times do  
-  #   temp = array[l-1]
-  #   array[i] = temp
-
-  #   i += 1
-
-  #   l -= 1
-  # end
-  
-  # return array.join(' ')
-
-
-
-    # (my_sentence.length/2).times {|i| my_sentence[i], my_sentence[-i-1] = my_sentence[-i-1], my_sentence[i]}
-    #   my_sentence
-
+ 
+  if my_sentence == nil
+    return nil
+  elsif 
+    my_sentence == ""
+    return ""
   end
+
+  array = my_sentence.split(/\.?\s+/)
+  i = 0
+  j = array.length - 1
+
+  (array.length / 2).times do 
+    temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+    i += 1
+    j -= 1
+  end
+
+  my_sentence = array.join
+  return my_sentence
 end
