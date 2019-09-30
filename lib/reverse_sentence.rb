@@ -7,9 +7,9 @@ def reverse_sentence(my_sentence)
   len = my_sentence.length
   
   (len / 2).times do |i|
-    temp_end_of_sentence = my_sentence[len - i - 1]
+    temp = my_sentence[len - i - 1]
     my_sentence[len - i - 1] = my_sentence[i]
-    my_sentence[i] = temp_end_of_sentence
+    my_sentence[i] = temp
   end
   
   first_index = 0
@@ -17,9 +17,9 @@ def reverse_sentence(my_sentence)
   len.times do |j|
     if my_sentence[j + 1] == " " || j == len - 1
       ((j - first_index + 1) / 2).times do |k|
-        temp_last_char = my_sentence[j - k]
+        temp = my_sentence[j - k]
         my_sentence[j - k] = my_sentence[first_index + k]
-        my_sentence[first_index + k] = temp_last_char
+        my_sentence[first_index + k] = temp
       end
       
       first_index = j + 2
