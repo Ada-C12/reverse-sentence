@@ -2,7 +2,7 @@
 #  sorted by the length of the word.
 # Time complexity: O(N^2)
 # Space complexity: O(N)
-require "pry"
+
 def sort_by_length(my_sentence)
   sentence_array = my_sentence.split(" ")
   bubble_sort(sentence_array, sentence_array.length)
