@@ -15,3 +15,5 @@ def reverse_sentence(test_string)
   
   return test_string
 end
+
+# per Dianna, I can reverse words in a new array and then reassign values to original array. Does this count as modifying in place? 
