@@ -11,9 +11,19 @@ def reverse_sentence(my_sentence)
     return my_sentence
   end
   
-  # initial digest of sentence
-  # reverses all characters
-  my_sentence.reverse! 
+  # determines the last index number that will be handled
+  last_index = my_sentence.length - 1 
+  
+  # reverses all the characters in the string
+  i = 0
+  my_sentence[i]
+  half_swap_limit = last_index / 2  + 1
+  
+  until i == half_swap_limit
+    my_sentence[i], my_sentence[last_index - i] = my_sentence[last_index - i], my_sentence[i]
+    
+    i += 1
+  end
   
   # creates and populates an array of all space characters
   space_array = []
@@ -27,8 +37,7 @@ def reverse_sentence(my_sentence)
     end
   end
   
-  # determines the last index number that will be handled
-  last_index = my_sentence.length - 1 
+  
   
   # determination of which methods are needed
   if !space_array.include? (0)
@@ -78,6 +87,7 @@ def first(first_space_index_number, my_sentence)
 end
 
 def last(last_space_index_number, last_index, my_sentence)
+  
   first_index_to_swap = last_space_index_number + 1
   half_limit = (last_index - first_index_to_swap) / 2
   
