@@ -7,7 +7,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      _(test_string).must_equal "world hello,"
+      test_string.must_equal "world hello,"
     end
 
     it "reverse a sentence with three words" do
@@ -15,7 +15,7 @@ describe "reverse sentence" do
 
       reverse_sentence(test_string)
 
-      _(test_string).must_equal "awesome! is Yoda"
+      test_string.must_equal "awesome! is Yoda"
     end
   end
 
