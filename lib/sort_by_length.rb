@@ -1,9 +1,8 @@
 # A method which will return an array of the words in the string
 #  sorted by the length of the word.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: On
 
-require 'pry'
 def sort_by_length(my_sentence)
   sorted_sentence = my_sentence.split(" ")
   bubble_sort(sorted_sentence, sorted_sentence.length)
@@ -25,5 +24,3 @@ def bubble_sort(array, length)
     i += 1
   end
 end 
-
-p sort_by_length("Basketball is life!")
