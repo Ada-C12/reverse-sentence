@@ -9,7 +9,7 @@ def reverse_sentence(my_sentence)
   end
 
   #Step_1: Reverse all characters within the string in place
-  sentence_pairs = pairs_helper(my_sentence.length)
+  sentence_pairs = my_sentence.length/2
   i = 1
   (sentence_pairs).times do
     temp = my_sentence[i-1]
@@ -23,7 +23,7 @@ def reverse_sentence(my_sentence)
 
   #Step_3: Reverse all characters for each word based on the whitespace index(es)
   #Step_3.1: Reverse the first word in the string
-  word_pairs = pairs_helper(space_indexes[0])
+  word_pairs = space_indexes[0]/2
   i = 1
   (word_pairs).times do
     temp = my_sentence[i-1]
@@ -32,7 +32,7 @@ def reverse_sentence(my_sentence)
     i += 1
   end
   #Step_3.2: reverse the last word in the string
-  word_pairs = pairs_helper((my_sentence.length - 1) - space_indexes[-1])
+  word_pairs = ((my_sentence.length - 1) - space_indexes[-1])/2
   i = 1
   (word_pairs).times do
     temp = my_sentence[-i]
@@ -47,7 +47,7 @@ def reverse_sentence(my_sentence)
   else
     until i == (space_indexes.length - 1)
       if my_sentence[space_indexes[i]+1] != " "
-        word_pairs = pairs_helper(space_indexes[i+1]-space_indexes[i]-1)
+        word_pairs = (space_indexes[i+1]-space_indexes[i]-1)/2
         n = 1
         (word_pairs).times do
           temp = my_sentence[space_indexes[i]+n]
@@ -60,14 +60,4 @@ def reverse_sentence(my_sentence)
     end
     return my_sentence
   end
-end
-
-# Helper method to determin pairs of character that needs to be swapped
-def pairs_helper(length)
-  if length % 2 == 0
-    pairs = length / 2
-  else
-    pairs = (length - 1) / 2
-  end
-  return pairs
 end
