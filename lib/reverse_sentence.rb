@@ -1,63 +1,39 @@
 # A method to reverse the words in a sentence, in place.
 # Time complexity: O(n2)
 # Space complexity: O(n)
-def reverse_sentence(my_sentence) 
-  #Step_0: Screen out all sentences that doesn't need to be/can't be reversed
-  if my_sentence == nil || my_sentence == "" || my_sentence.include?("\s") == false
-    return my_sentence
-    exit
+def reverse_helper(string, s, e)
+  pairs = (e + 1 - s)/2
+  pairs.times do
+    temp = string[s]
+    string[s] = string[e]
+    string[e] = temp
+    s += 1
+    e -= 1
   end
+end
 
-  #Step_1: Reverse all characters within the string in place
-  sentence_pairs = my_sentence.length/2
-  i = 1
-  (sentence_pairs).times do
-    temp = my_sentence[i-1]
-    my_sentence[i-1] = my_sentence[-i]
-    my_sentence[-i] = temp
-    i += 1
-  end
+def reverse_sentence(sentence) 
+  return sentence if sentence == nil || sentence == "" || sentence.include?("\s") == false
+  reverse_helper(sentence, 0, (sentence.length - 1))
 
-  #Step_2: Find all whitespace index(es) within the current string
-  space_indexes = (0...my_sentence.length).find_all { |c| my_sentence[c] == " " }
-
-  #Step_3: Reverse all characters for each word based on the whitespace index(es)
-  #Step_3.1: Reverse the first word in the string
-  word_pairs = space_indexes[0]/2
-  i = 1
-  (word_pairs).times do
-    temp = my_sentence[i-1]
-    my_sentence[i-1] = my_sentence[space_indexes[0]-i]
-    my_sentence[space_indexes[0]-i] = temp
-    i += 1
-  end
-  #Step_3.2: reverse the last word in the string
-  word_pairs = ((my_sentence.length - 1) - space_indexes[-1])/2
-  i = 1
-  (word_pairs).times do
-    temp = my_sentence[-i]
-    my_sentence[-i] = my_sentence[space_indexes[-1]+i]
-    my_sentence[space_indexes[-1]+i] = temp
-    i += 1
-  end
-  #Step_3.3: reverse the words in between (if any)
-  i = 0
-  if space_indexes.length == 1
-    return my_sentence
-  else
-    until i == (space_indexes.length - 1)
-      if my_sentence[space_indexes[i]+1] != " "
-        word_pairs = (space_indexes[i+1]-space_indexes[i]-1)/2
-        n = 1
-        (word_pairs).times do
-          temp = my_sentence[space_indexes[i]+n]
-          my_sentence[space_indexes[i]+n] = my_sentence[space_indexes[i+1]-n]
-          my_sentence[space_indexes[i+1]-n] = temp
-          n += 1
-        end
+  j = 0
+  spaces = []
+  while j <= sentence.length
+    if sentence[j] == " "
+      spaces << j
+      if spaces.length == 1
+        # reverse the first word
+        reverse_helper(sentence, 0, (j - 1))
+      elsif spaces.length > 1
+        # reverse the middle word
+        reverse_helper(sentence, (spaces[-2] + 1), (j - 1))
       end
-      i += 1
+    elsif sentence[j] == nil
+      # reverse the last word
+      reverse_helper(sentence, (spaces[-1] + 1), (j - 1))
     end
-    return my_sentence
+    j += 1
   end
+  
+  return sentence
 end
