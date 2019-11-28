@@ -1,6 +1,6 @@
 # A method to reverse the words in a sentence, in place.
-# Time complexity: O(n2)
-# Space complexity: O(n)
+# Time complexity: O(n*m)???
+# Space complexity: O(1)
 def reverse_helper(string, s, e)
   pairs = (e + 1 - s)/2
   pairs.times do
@@ -34,6 +34,6 @@ def reverse_sentence(sentence)
     end
     j += 1
   end
-  
+
   return sentence
 end
