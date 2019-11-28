@@ -3,22 +3,21 @@
 # Time complexity: O(n2)
 # Space complexity: O(n)
 
-def sort_by_length(my_sentence)
+def sort_by_length(sentence)
   #Step_1: break the sentence into an array of words
-  my_array = my_sentence.split(/\W+/)
-  #Step_2: compare the words and sort the array
-  i = 0
-  while i < my_array.length-1
-    j = 0
-    while j < my_array.length-i-1
-      if my_array[j].length > my_array[j+1].length
-        temp = my_array[j]
-        my_array[j] = my_array[j+1]
-        my_array[j+1] = temp
-      end
-      j += 1
+  array = sentence.split(/\W+/)
+  #Step_2: use insertion sort to sort the array
+  i = 1
+  while i < array.length
+    to_insert = array[i]
+    j = i
+    while j > 0 && array[j-1].length > to_insert.length
+      array[j] = array[j-1]
+      j -= 1
     end
+    array[j] = to_insert
     i += 1
   end
-  return my_array
+
+  return array
 end
